@@ -70,6 +70,14 @@ class ForestCover:
         return model
 
     def test(self):
+        """
+        A brute force method to test all combinations of given architecture options and hyperparameters.
+
+        sklearn's GridSearchCV class is handy for comparing hyperparameters and getting performance data,
+        but it can't compare multiple architectures. For each combination of given architecture options,
+        this method instantiates a GridSearchCV and uses it to test all combinations of the given
+        hyperparameters. The GridSearchCV results from each iteration are combined and output to a CSV.
+        """
 
         # this will store a dataframe of results concatenated from each iteration
         results = None
