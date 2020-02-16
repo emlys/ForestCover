@@ -11,8 +11,11 @@ Aspect describes the compass direction that the slope faces and so ranges from 0
 Slope can take values in the range 0 to 90 (completely flat to completely vertical). The maximum value in the datasets is 66.
 ### Horizontal distances
 These could in theory be any positive number but the bounds of the study area limit them to reasonable values. The ranges seen in the dataset are:
+
 Horizontal distance to hydrology: [0, 1,397]; I will assume 1,400 is the max.
+
 Horizontal distance to roadways: [0, 7117]; I will assume 7200 is the max.
+
 Horizontal distance to fire points: [0, 7173]; I will assume 7200 is the max.
 ### Vertical distance to hydrology
 This is the only variable which has negative values. The range seen in the dataset is [-173, 601]. It seems likely that values outside this range could occur in another test set, but for now I'll assume that this is the complete range.
