@@ -46,30 +46,31 @@ print("network made, now compiling")
 # compile the neural network
 mod.compile(optimizer='sgd', loss='categorical_crossentropy', metrics=['accuracy'])
 '''
- # ONSOMBULL GANG, ExTrA TrEeS gAnG (extra randomForest )
-classifier = XTC(	n_estimators =     200,				# numba of trees, when the weak band together they are STRONK (or accurate idc)
-					max_features=  "sqrt",				# max features to consider while attempting classification
-					min_samples_split =  2,				# Node splitting threshold (too many, get out)
-					n_jobs = -1,						# -1 is ALL SYSTEMS GO, anything else is just how many jobs to run para
-					#oob_score = True,
-					#bootstrap = True,
-					random_state= 5,					# no fuggin cllue m8
-					verbose = 0,						# set to 0 or delete if talks too much
-					warm_start = True,					# use last soln, then add more trees(fuck it) 
-					max_samples = 20					# i think this can be used for minibatching the trees
+ 
 
-					)
+#Extremely Randomized Trees
+classifier = XTC(	
+					n_estimators = 200,					# Number of weak learners in the forest (Decision Trees)
+					max_features=  "sqrt",				# Max number of features to consider while attempting classification
+					min_samples_split =  2,				# Minimum number of features required to make further splits, # < 2 is a leaf.
+					n_jobs = -1,						# Run as many parallel jobs as possible (for speed)
+					random_state= 5,					# Random for Sampling of features @bestsplit (bootstrap,draw for each maxfeature too but this is more imporant)
+					verbose = 0,						# set to 0 or delete if talks too much
+					warm_start = True,					# use previous solution, and add more trees.
+					#bootstrap = True  					# MiniBatch the trees, sampling from data set
+					#max_samples = 2000					# Bootstrapping/minibatching, but we split our data ahead of time anyways
+				)
 
 print('compiled, now running')
 # train the neural network
 #history = mod.fit(x_train, y_train, 32, 300, validation_split=0.2)
-thingy = classifier.fit(x_train, y_train)
+fit = classifier.fit(x_train, y_train)
 
 print("running score func")
 
-succ = classifier.score(x_test, y_test)
+acc = classifier.score(x_test, y_test)
 
-print(succ)
+print(acc)
 
 '''
 # evaluate for success
