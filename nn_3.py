@@ -58,7 +58,7 @@ classifier = XTC(
 					verbose = 0,						# set to 0 or delete if talks too much
 					warm_start = True,					# use previous solution, and add more trees.
 					#bootstrap = True  					# MiniBatch the trees, sampling from data set
-					#max_samples = 2000					# Bootstrapping/minibatching, but we split our data ahead of time anyways
+					#max_samples = 2048					# Bootstrapping/minibatching, but we split our data ahead of time anyways
 				)
 
 print('compiled, now running')
