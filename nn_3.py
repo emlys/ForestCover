@@ -22,7 +22,7 @@ print("been split, setting up network now")
 
 #Extremely Randomized Trees
 classifier = ERT(	
-					n_estimators = 200,					# Number of weak learners in the forest (Decision Trees)
+					n_estimators = 100,					# Number of weak learners in the forest (Decision Trees)
 					max_features =  "sqrt",				# Max number of features to consider while attempting classification
 					min_samples_split =  2,				# Minimum number of features required to make further splits, # < 2 is a leaf.
 					n_jobs = -1,						# Run as many parallel jobs as possible (for speed)
